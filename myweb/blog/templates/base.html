@@ -1,0 +1,22 @@
+<html><head>
+	<style type="text/css">
+	body{color:#0A0A0A;background:#FAFAFA;padding:0 5em;margin:0}
+		h1{padding:2em 1em;background:#7171C6}
+		h2{color:#8B1A1A;border-top:1px dotted #8B2500;margin-top:2em}
+		p{margin:1em 0}
+	</style>
+</head>
+<body>
+	<h1>Django blog</h1>
+	<h2>login<h2>
+	<form method="post" action='/login/'>
+	{% csrf_token %}
+		<input name="username" type="text" placeholder="username">
+		<input name="password" type="password" placeholder="password">
+		<button id="btn" type="submit" >login</button>
+		<br>{{error}}
+	</form>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>	

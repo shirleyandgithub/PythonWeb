@@ -1,0 +1,41 @@
+<html lang="zh-CN">
+	<head>
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	{% bootstrap_messages %}
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Project name</a>
+				</div>
+			</div>
+		</nav>
+	<br><br>
+	
+	
+	
+	<div class="well">
+	<h3>upload file</h3>
+		<form method="post" enctype="multipart/form-data" action='/upload_s/' >
+		{% csrf_token %}
+			<br/>
+			<input name="fileing" type="file" name="file" />
+			<br/>
+			<p>file describe:</p>
+			<input name="filename" type="text" class="l_input account input_with_watermark" >
+			<input id="btn" type="submit" class="btn btn-lg btn-primary" value="upload"/>
+			<br/>
+			<p class="text-warning">
+				{{ upload_success }} {{ error }}
+			</p>
+		</form>
+	</div>
+		
+		<footer>
+		<p>&copy; Company 2016 & chongshi</p>
+		</footer>
+</body>
+</html>
